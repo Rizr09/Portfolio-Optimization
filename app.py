@@ -57,7 +57,7 @@ if app_mode == "Portofolio MPT Awal":
         # ---------------------
         # Step 2: Data Retrieval and Processing
         # ---------------------
-        data = yf.download(tickers, start=start_date, end=end_date)['Adj Close']
+        data = yf.download(tickers, start=start_date, end=end_date)['Close']
         data.index = pd.to_datetime(data.index)
         data = data.join(ibprextr_data, how='inner')
         data = data.dropna(axis=1)
